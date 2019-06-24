@@ -1,2 +1,8 @@
 
 /mpfextractor https://mpfextractor.netlify.com/ 200!
+
+# Netlify drawback: https://community.netlify.com/t/common-issue-can-i-deploy-multiple-repositories-in-a-single-site/179
+# To avoid modifying other repos that are routed to from this site, currently all their files must be proxied:
+/MPFExtractor.js https://mpfextractor.netlify.com/MPFExtractor.js
+/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg https://mpfextractor.netlify.com/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg
+/site.webmanifest https://mpfextractor.netlify.com/site.webmanifest

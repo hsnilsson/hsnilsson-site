@@ -13,55 +13,69 @@
                 font-size: 1.1em;
                 font-weight: 400;
                 list-style-type: none;
-                line-height: 1.62em;
+                line-height: 1.3em;
             }
+
             h1,h2,h3,h4,h5,h6 {
                 font-size: 1.62rem;
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
             }
+
             body {
                 background: #fffdfb;
-                text-align: center;
+                margin-left: 0.5em;
+                margin-right: 0.5em;
             }
-			ul {
-				padding: 0;
-			}
-            article {
+
+            header {
+                max-width: 768px;
                 position: relative;
                 margin: auto;
+                margin-top: 3em;
             }
-            article{
+
+            main {
+                margin: 1em;
+            }
+
+            section {
+                position: relative;
+                margin: auto;
                 margin-top: 4em;
-            	max-width: 768px;
+                max-width: 768px;
+                text-align: right;
+            }
+
+            section > ul {
+                padding: 0;
             }
         </style>
     </head>
     <body>
-        <article>
+		<header>
             <h1>hsnilsson AB</h1>
             
 			<p>A one man software consultant company focused on frontend development and JavaScript programming.</p>
 			<p>I'm currently looking for contracts in the Gothenburg region, but I also do remote projects.</p>
-			<p>If you need work done in <em>Angular</em>, <em>React</em> or just plain <em>JavaScript</em>, <em>HTML</em> and <em>CSS</em>, then <mark>
-			<a href="assets/CV Henrik S Nilsson.pdf">have a look at my CV</a></mark> or my
+			<p>If you need work done in <em>Angular</em>, <em>React</em> or just plain <em>JavaScript</em>, <em>HTML</em> and <em>CSS</em>, then
+			<a href="assets/CV Henrik S Nilsson.pdf">see my CV</a> or
 			<a href="https://www.linkedin.com/in/henrik-schulze-nilsson/">Linkedin</a> and don't hesitate to contact me.</p>
 
-        </article>
-        
-        <article>
-        	<span>
-        	<a class="hsmail"></a> <a class="hstel"></a>
-        	</span>
-        </article>
+        	<p><a class="hsmail"></a></p>
+        	<p><a class="hstel"></a></p>
+        </header>
+		<main>
 
-        <article>
+        <section>
         <h3>"Showreel"</h3>
         <p>(some stuff to complement my CV)</p>
         <ul>
             <li><a href="/room">Room</a> - WebGL experiment where i made a fix for a compressed 3D-file format</li>
             <li><a href="/mpfextractor">MPFExtractor</a> - Extract depth maps from (mostly iPhone X) images</li>
         </ul>
-        </article>
+        </section>
+        
+		</main>
         <script type="text/javascript">
             // Quite naive mail obfusation
         	var query = document.querySelector.bind(document);

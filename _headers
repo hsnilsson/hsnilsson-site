@@ -3,6 +3,8 @@
  X-XSS-Protection: 1; mode=block
  Referrer-Policy: no-referrer
  X-Content-Type-Options: nosniff
+ Access-Control-Allow-Origin: *
  
 /assets/*
   Cache-Control: public, max-age=360000
+  

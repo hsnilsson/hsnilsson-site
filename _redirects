@@ -2,11 +2,12 @@
 # To avoid modifying other repos that are routed to from this site, currently ALL their files must be proxied:
 
 # Redirects for /MPFExtractor
-/mpfextractor https://mpfextractor.netlify.com/ 200!
-/MPFExtractor.js https://mpfextractor.netlify.com/MPFExtractor.js 200!
-/assets/GitHub-Mark-120px-plus.png https://mpfextractor.netlify.com/assets/GitHub-Mark-120px-plus.png 200!
-/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg https://mpfextractor.netlify.com/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg 200!
-/site.webmanifest https://mpfextractor.netlify.com/site.webmanifest 200!
+#/mpfextractor https://mpfextractor.netlify.com/ 200!
+#/MPFExtractor.js https://mpfextractor.netlify.com/MPFExtractor.js 200!
+#/assets/GitHub-Mark-120px-plus.png https://mpfextractor.netlify.com/assets/GitHub-Mark-120px-plus.png 200!
+#/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg https://mpfextractor.netlify.com/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg 200!
+#/site.webmanifest https://mpfextractor.netlify.com/site.webmanifest 200!
+/mpfextractor/* https://mpfextractor.netlify.com/* 200!
 
 # Redirects for /room
 /room https://student-room.netlify.com/ 200!

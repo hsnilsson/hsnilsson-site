@@ -6,5 +6,5 @@
  Access-Control-Allow-Origin: *
  
 /assets/*
-  Cache-Control: public, max-age=36
+  Cache-Control: public, max-age=3600
   

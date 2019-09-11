@@ -4,7 +4,21 @@
 
 # Redirects for /MPFExtractor
 /mpfextractor/* https://mpfextractor.netlify.com/* 200!
+/assets/GitHub-Mark-120px-plus.png https://mpfextractor.netlify.com/assets/GitHub-Mark-120px-plus.png 200!
+/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg https://mpfextractor.netlify.com/assets/340_AppleiPhoneXSMax_IMG_E7156.jpg 200!
 
 # Redirects for /room
-/room/* https://student-room.netlify.com/* 200!
+/room https://student-room.netlify.com/ 200!
+/js/Detector.js https://student-room.netlify.com/js/Detector.js 200!
+/js/libs/stats.min.js https://student-room.netlify.com/js/libs/stats.min.js 200!
+/js/controls/FirstPersonControls.js https://student-room.netlify.com/js/controls/FirstPersonControls.js 200!
+/js/loaders/ctm/CTMLoader.js https://student-room.netlify.com/js/loaders/ctm/CTMLoader.js 200!
+/build/three.min.js https://student-room.netlify.com/build/three.min.js 200!
+/Capture_2013_12_30_20_24_56.ctm.js https://student-room.netlify.com/Capture_2013_12_30_20_24_56.ctm.js 200!
+/Capture_2013_12_30_20_24_56_patched.ctm.js https://student-room.netlify.com/Capture_2013_12_30_20_24_56_patched.ctm.js 200!
+/tex_0_low.jpg https://student-room.netlify.com/tex_0_low.jpg 200!
+/js/loaders/ctm/CTMWorker.js https://student-room.netlify.com/js/loaders/ctm/CTMWorker.js 200!
+/js/loaders/ctm/lzma.js https://student-room.netlify.com/js/loaders/ctm/lzma.js 200!
+/favicon.ico https://student-room.netlify.com/favicon.ico 200!
+/js/loaders/ctm/ctm.js https://student-room.netlify.com/js/loaders/ctm/ctm.js 200!
 

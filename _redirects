@@ -3,7 +3,7 @@
 # (splat (*) works only as long as a subsite only have relative paths, e.g.: <img src=something-not-starting-withslash.png>)
 
 # Redirects for /MPFExtractor
-/mpfextractor/* https://mpfextractor.netlify.com/:splat/ 200!
+/mpfextractor/* https://mpfextractor.netlify.com/:splat 200!
 
 # Redirects for /room
 /room/* https://student-room.netlify.com/:splat 200!

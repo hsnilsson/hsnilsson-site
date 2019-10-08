@@ -24,6 +24,7 @@
 
             body {
                 background: #fffdfb;
+                background-image: url('assets/hsn-techs-bg_6.png');
                 margin-left: 0.5em;
                 margin-right: 0.5em;
                 text-shadow: none;
@@ -89,7 +90,7 @@
                 const functionOfDistance = (distance ** 3) * 0.0007;
                 
                 // textShadow specific cosmetics
-                const opacity = 0.15 * (1 - distance / 300);
+                const opacity = 0.12 * (1 - distance / 300);
                 const textShadow = `${roll * 0.1}px ${pitch * 0.1}px rgba(0,0,0,${opacity})`;
                 document.body.style.textShadow = textShadow;
                 

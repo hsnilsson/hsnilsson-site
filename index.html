@@ -111,19 +111,9 @@
             const distance = Math.sqrt(pitch ** 2 + roll ** 2);
 
             // textShadow specific cosmetics
-            const opacity = 0.01 * (1 - distance / 90);
-            let textShadows = '';
-
-            // Position shadows from origo for textShadow fake blur
-            const positions = [[0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2]];
-            for (let position of positions) {
-                if (opacity > 0) {
-                    textShadows += `${Math.trunc((roll * 0.5) + position[0])}px ${Math.trunc((pitch * 0.5) + position[1])}px rgba(0,0,0,${opacity}), `;
-                }
-            }
-
+            const opacity = 0.15 * (1 - distance / 90);
             // Set shadows
-            document.body.style.textShadow = textShadows.substring(0, textShadows.length - 2);
+            document.body.style.textShadow = `${Math.trunc((roll * 0.5))}px ${Math.trunc((pitch * 0.5))}px 2px rgba(0,0,0,${opacity})`;
             document.body.parentElement.style.boxShadow = `inset ${Math.trunc((roll * 0.5))}px ${Math.trunc((pitch * 0.5))}px 10px rgba(0,0,0,0.05)`;
 
             // Parallax effect for the background-image

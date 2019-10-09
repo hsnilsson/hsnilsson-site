@@ -94,6 +94,8 @@
         let updating = false;
         function handleOrientation(event) {
 
+            if(!event.beta) return;
+
             let pitch = event.beta;  // Pitch, in degree in the range [-180,180]
             let roll = event.gamma; // Roll, in degree in the range [-90,90]
 

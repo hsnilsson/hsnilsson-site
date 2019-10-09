@@ -91,7 +91,9 @@
 
         // Shadows, I always thought they should depend on the device orientation!
         // Caveat: Limited to https
+        let updating = false;
         function handleOrientation(event) {
+
             let pitch = event.beta;  // Pitch, in degree in the range [-180,180]
             let roll = event.gamma; // Roll, in degree in the range [-90,90]
 
@@ -108,13 +110,15 @@
             // textShadow specific cosmetics
             const opacity = 0.01 * (1 - distance / 90);
             let textShadows = '';
-            const positions = [[0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2]];
+            // Position shadows from origo for fake blur
+            const positions = [[0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2], [0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2], [0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2], [0, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -1], [1, 1], [-1, -1], [1, -1], [0, -2], [2, 2], [-2, -2], [2, -2]];
             for (let position of positions) {
-                textShadows += `${Math.trunc((roll * 0.5) + position[0])}px ${Math.trunc((pitch * 0.5) + position[1])}px rgba(0,0,0,${opacity}), `;
+                if (opacity > 0) {
+                    textShadows += `${Math.trunc((roll * 0.5) + position[0])}px ${Math.trunc((pitch * 0.5) + position[1])}px rgba(0,0,0,${opacity}), `;
+                }
             }
 
-            textShadows = textShadows.substring(0, textShadows.length - 2) + '';
-            document.body.style.textShadow = textShadows;
+            document.body.style.textShadow = textShadows.substring(0, textShadows.length - 2);
             document.body.parentElement.style.boxShadow = `inset ${Math.trunc((roll * 0.5))}px ${Math.trunc((pitch * 0.5))}px 10px rgba(0,0,0,0.05)`;
 
 
@@ -125,9 +129,18 @@
             // Elements would use boxShadow like below:
             // const boxShadow = `${roll}px ${pitch}px ${distance}px 0px rgba(0,0,0,0.75)`;
             // someElement.style.boxShadow  = boxShadow;
+
+            updating = false;
         }
 
-        window.addEventListener('deviceorientation', handleOrientation);
+        function onDeviceorientation(event) {
+            if (!updating) {
+                requestAnimationFrame(() => handleOrientation(event));
+            }
+            updating = true;
+        }
+
+        window.addEventListener('deviceorientation', onDeviceorientation, false);
     </script>
 </body>
 

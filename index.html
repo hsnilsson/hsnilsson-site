@@ -110,7 +110,7 @@
             let roll = event.gamma; // Roll, in degree in the range [-90,90]
 
             // Constrain pitch and roll
-            const maxPitch = 60, minPitch = -60, maxRoll = 60, minRoll = -60;
+            const maxPitch = 60, minPitch = -60, maxRoll = 60, minRoll = -60, maxFar = 50;
             if (pitch > maxPitch) { pitch = maxPitch };
             if (pitch < minPitch) { pitch = minPitch };
             if (roll > maxRoll) { roll = maxRoll };
@@ -118,12 +118,15 @@
 
 
             // Create text-shadow and box-shadow
-            const hOffset = Math.trunc((roll * 0.5)),
-                vOffset   = Math.trunc((pitch * 0.5)),
-                distance  = Math.sqrt(pitch ** 2 + roll ** 2), // Pythagoras, remember?
-                opacity   = 0.15 * (1 - distance / 90); // Enhancement opportunity
+            const hOffset  = roll,
+                vOffset    = pitch,
+                hOffsetExp = hOffset/Math.abs(hOffset) * Math.exp(Math.abs(hOffset)/9, 3),
+                vOffsetExp = vOffset/Math.abs(vOffset) * Math.exp(Math.abs(vOffset)/9, 3),
+                distance   = Math.sqrt(pitch ** 2 + roll ** 2),
+                blur       = Math.min(2 + 8 * distance/100, 40),
+                opacity    = 0.8-Math.min(distance / maxFar, maxFar); // Enhancement opportunity
 
-            let cssText = `text-shadow: ${hOffset}px ${vOffset}px 2px rgba(0,0,0,${opacity});`
+            let cssText = `text-shadow: ${Math.trunc(hOffsetExp)}px ${Math.trunc(vOffsetExp)}px ${blur}px rgba(0,0,0,${opacity});`
                 + `box-shadow: inset ${hOffset}px ${vOffset}px 10px rgba(0,0,0,0.05);`;
 
             // Parallax effect for the background-image

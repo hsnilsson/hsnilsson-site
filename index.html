@@ -102,6 +102,7 @@
         let updating = false;
         let container = query('#container');
         function handleOrientation(event) {
+            updating = false;
 
             if (!event.beta) return;
 
@@ -131,7 +132,6 @@
 
             // Update DOM
             document.body.style.cssText += `${cssText}`;
-            updating = false;
         }
 
         function onDeviceorientation(event) {

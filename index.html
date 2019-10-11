@@ -97,7 +97,7 @@
         hstel.setAttribute("href", "t" + "el:" + hstel.innerHTML);
 
         // Shadows, I always thought they should depend on the device orientation!
-        // Caveat: Limited to https
+        // Caveat: Limited to https (and orientation aware devices)
         let updating = false;
         let container = query('#container');
         function handleOrientation(event) {
@@ -119,7 +119,7 @@
             // Create text-shadow and box-shadow
             const hOffset = Math.trunc((roll * 0.5)),
                 vOffset   = Math.trunc((pitch * 0.5)),
-                distance  = Math.sqrt(pitch ** 2 + roll ** 2), // Pythagoras, remember?
+                distance  = Math.sqrt(pitch ** 2 + roll ** 2),
                 opacity   = 0.15 * (1 - distance / 90); // Enhancement opportunity
 
             let cssText = `text-shadow: ${hOffset}px ${vOffset}px 2px rgba(0,0,0,${opacity});`

@@ -67,7 +67,7 @@
         <header>
             <h1>hsnilsson AB</h1>
 
-            <p>Hi! 👋</p>
+            <p>Hi! 👋</p> <!-- Waving hand emoji, how original -->
             <p>I'm Henrik Nilsson, a freelance software engineer,
                 currently open for contracts in Gothenburg!<br>
                 (I also do remote projects.)</p>
@@ -84,22 +84,23 @@
     </div>
     <script type="text/javascript">
 
-        // Quite naive mail obfusation
         const query = document.querySelector.bind(document);
-        const obfu = ["&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;&#110;&#105;&#108;&#115;&#115;&#111;&#110;&#46;&#99;&#111;&#109;"];
+
+        // Custom, funny and naive mail obfusation
         const hsmail = query(".hsmail");
-        hsmail.innerHTML = obfu[0];
+        hsmail.innerHTML = `&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;`
+            + `&#110;&#105;&#108;&#115;&#115;&#111;&#110;&#46;&#99;&#111;&#109;`
         hsmail.setAttribute("href", "mai" + "lto:" + hsmail.innerHTML);
 
         const telBy2 = 23366821750.5;
         const hstel = query(".hstel");
         hstel.innerHTML = "+" + telBy2 * 2;
-        hstel.setAttribute("href", "t" + "el:" + hstel.innerHTML);
+        hstel.setAttribute("href", "tel:" + hstel.innerHTML);
 
         // Shadows, I always thought they should depend on the device orientation!
         // Caveat: Limited to https (and orientation aware devices)
-        let updating = false;
-        let container = query('#container');
+        let updating = false,
+            container = query('#container');
         function handleOrientation(event) {
             updating = false;
 
@@ -114,7 +115,6 @@
             if (pitch < minPitch) { pitch = minPitch };
             if (roll > maxRoll) { roll = maxRoll };
             if (roll < minRoll) { roll = minRoll };
-
 
             // Create text-shadow and box-shadow
             const hOffset = Math.trunc((roll * 0.5)),

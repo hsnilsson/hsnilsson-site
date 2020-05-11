@@ -1,0 +1,25 @@
+{
+  "name": "hsnilsson-site",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/3808f4c6-f0df-47f4-9b0a-b0baea3e3cc1/deploy-status)](https://app.netlify.com/sites/hsnilsson/deploys)",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --port 1212  --https 'true'",
+    "https": "local-web-server --https",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henchies/hsnilsson-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henchies/hsnilsson-site/issues"
+  },
+  "homepage": "https://github.com/henchies/hsnilsson-site#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}

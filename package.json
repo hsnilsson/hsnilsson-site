@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --port 1212  --https 'true'",
-    "https": "local-web-server --https",
+    "https": "npx local-web-server --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

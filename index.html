@@ -1,179 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>hsnilsson</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="Description"
-        content="hsnilsson AB is a one man software consultant company focused on frontend development and JavaScript programming.">
-    <meta name="theme-color" content="#4ff79c">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1"
+    />
+    <meta
+      name="Description"
+      content="hsnilsson AB is a one man software consultant company focused on frontend development and JavaScript programming."
+    />
+    <meta name="theme-color" content="#4ff79c" />
 
     <style id="hsn-retro-style">
-        :root {
-            --bg-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAATlBMVEX27uT27dnp6OP05Nv04trz7OXx6+Tv6uT25trz7OP1593r6+T27eLq4tjr6OHs6eP16d/r59/27d726+Hs5d3x6uD17Nnv597x6Njt5dhZBrY8AAAOMklEQVR42tya63KrIBRGt3YGujMMpBj0/d/0bCGZz5ySaoOg0zXTtGL/rOwLF6WjuGme0X2Wr5leuDFPNyHQ38HcHAuqF/Lyt9tsTn8QTu62f8nXqYLNnB1keofJKmR8Tn3iaQrMZ/BP2amfRXUcDPQG4Sby7pV5Cnn4XaEb33kSqpgL7lkc7m/If2mbF5/oDk+bK950MxXkk3NwEA3yp1XpG6D3YLHPVPlkaEEwtImuq+MeekuRuTVpEnQUjyDs79hPty+7aO1ToLeAu6FdceKLNHfzwHLEUQkcQpgE+cX0Pl6czdh14975zsuyd2KuFgOWzoJHyldQJ+4F9XRNp0HUx2rqMdsdnVTdIOwV1HUv6JOqx5Q3ldS1eCv5OV49b7hzp3N9WJrHz3CUOsL7YlyoMbkx5nVeTG7tGVHUGffRG++pHNjF3ZZygqS8Zcb30hD4mdffym6hZxFWrs/g1HyPWrJe0X7czZ01XK1zWnDOLvyZWrMyhxkj9n4vb6eZ3KKs4wXrlAvNcx7qeUy5ObuoLZ/obc8dL94VHLVkLZ/LZ3cdyzkKcnJ9vvmY2oLduG9vtXIZSyvdiTja+CPdg9bJ0vYOzb9l4NdXLqWl7hDmIMFN6Z5OEy0nXUawdYuKX9+j4XZZtqvlOU1vU6gj9t7pFks51SjnEfZq6vcooupVCn8iIMsLDi2q7dHGAvfUwIBYJr07mgT3//9QC7A1r7WD26bOBHDVgophd5mEx7G0yiW8pYZ0QqWzqpBtc25xIG97hL1lm4Pcah8sb/FBvOUK6ztOrmKvG09uAG4rfbB4SfPIZ9Y6DYo2ljS2ublZUSvbvIUY4PWFrMJCth0e6hXm9lTaVuvX2xepd912+wKz0ZiVjN9n06rOtGkVusjoK/Q5ENzyqEIr4fmoQtER/PyA0Yy4V3hApfMHVJotirwt3hsPvxons1icM/NsO6Ml6IoZN4/iddwxXu0wOhSoG6HWDs7s+fQFCxcln4tq2Ow5DNeZi/D58Rm5nO0p264PngYxFNE8l7M9ZVt73OgIbFAHOfUqKV/rIbOl36ibH9VP+D7Bjq8WVFNH2A2Rgf/e6jB3cC9Wv1IxZuyElfPn8kMLJeb829eILvcAz0iDHwYzQwPUy1NeqOCO4xcWZ/eod8bLY1vUh28TLtR3cje0PynIysWNCrazW18ZvMJxb3XI+yJx7ylPyDxUdTil+wE4Xp7VjTHXpH443o9Imax7EgesN5qTeagPaSH34ATqxo+rr5gy88rgWouPmf+NgZoD7Q7UWhZ93NWH06iLdgo3oAqgxRvMcjLFHaeOcAMUexV1GtDhMdoaQ10OTzX41suhbqgVSHSo1y12zG6Hq/vUzqFevdgxu5lBuA4zTdUxi0G9VcbnGntSp9qgnR+j/vFo7FDHbF8Xj3YO9XbFjtmttTq8M+oNih3qdGp1T2D/2e36j7xz2XEQhqGomUqkQVBQEFby/z86PIJuaDLTzSQTmbMq3Z3a146QCt3+aaZSDZ9WL1L2eLHPczD7HhRRQr1g2LHYcZwrU3XzQT3/WdYHHOrz9KxPPUvYH8+Dbuqp997ohJwk1UuGvXsCfC6hbmpSf9arniPs07+p95/U2Q4rFmHPq47g54d/V7fDgeNc662fuq6kN0hXHeYnecIO/0P/0c1UDJNSZ+sG16zs1uvFwOj4bMzTTCXpU+rW15m3Vt+Kz+dmFwVH6r7avCrv6oBJFCal7o6pzsdPAHqSREId5fbj3dpGZMfH6r7clwnvDnsSBUfqCHvjBsjLDzs1CPtad8hb8WGnBmHfsdb7s/SwU4Owe/y1FRf2SB1hB1akukmoI+zMuBa33vpYHWHn1Zgb3sPO4tSJ39URdh6AxM0eVR1hD9QdC1Q3b+r2VN+q77y5zLNsf1W3g/Ob3N+ics5y04hUv4adwnBfYSNM/NrxlnBoD2Fp9Y7VHdm45sbIOrwHXMccW2uDDMjr8hC+qAewaO0Nk1DnRm6XB/Tv6nwL7Z1QXeAK+6xe50lV66XVlA1T7RZT+E9FHvratpgvc1vgwX31aOu2Hc9nu+gvUNFzmP8eHT4HQNHKV0hLEoF0qO7bfVz0FniRr78gaIPxGHG+z/Uo05xULK7U+ZMokgzUj/6+fD+SZPSuOKpX8o0aNbzpJB9K66jK2G0vJTTowE/05PwbZa62tyrr8AuP/Hnn1YG+waHmIFFddRN3LPLkU76qervEH/FpkWv1kp735efStsLLrn/RU7LVMeJj9B3UFwoY25tUPRrx43m5SL9TgxEfnmhUq0bpEx5djSa4ze05qEfuYm9SfbN3RruJw0AUHe0ktmysOCig/P+f7jh2egvNAglWmSWcVipKX3p6r2M7BLjawKAG4F0vUhV+LtVtzN72afEQVP/vFlfxzrnnnMkJRtC8/6n+MTnOtcAYxbnb6YIUPU/Jub1Gr7urkUswBVH9j9xr4GD+E6PtueSqQHx3scN8GXpb3Ky+v9xL3/fobu66a17Z1DHf3XBfMjfC+1feFXNI28z7uxuoz9JL7ppX89XUl91Vb+Ke77u9pgW6N7DVQgff1J9yDwo3AouhA3Ph7jY4D733LHh18ua2OtxNwq13Bgrey/yRvgOkvqbynq9pmEdVwbtv6nYZiK9IXVS/fzVjwyeR96QHk0HoS5WHetimzjww50cDKcE9oA7zx/sekiW+RZgl9py8ktab+303W/oe+MK9J/Ildi2tD6bwYN/pUYaLwifXnptTCV7Fud49oL5pauuZkTmTEObURV7DJA9xwdQIHeoo/EAJpC76ry891P/p3m5S94y69z8Onbh5/TYQ6olqfSePwqd8hzAVYY5dDtPrgXqiTt8RMZe5zPeiz1+xn1jFfetQT1QKnXwxzwPde59XOSV3JXO7u3A3dUInFlB39jwdO825j6QCB3W4b1vJAczoAgshNyHnrmFev+WOSc+s7nuYh3qYN3F5sDc590ZF3xNJEkAa5ok1f+6QvLnJ6Q6957Gzzs1T2+sn9SV3AHP0fe06FornLnEcx+kXWvqOyl+zue/U577jgOkKf8RfyUnuvjtCX6MuNGF61A9hUo+dcIjTD00vxUuC1ULHmY0CT3jRJXLWHiY6VbevGuHWUKfV6p6ELM587DqXX2TfGlHXdUV/0d2Y7eq5+EW9S0RrWiKyUdmdu7g+uWTuaBVhMu57nuky8RCJDqqGOtwFaG8JHbmDhifvNNYNtdr6LphFcM/pdvfTeBR1S4409j3hKjiDgQueeRTx2EXbtkRRXd8TkA70PMOFOlEa6jb1XcVm/QoEXYXAM8ekHkW9JaOx76Cye1OmdZf7vgv1ryceOsGmSmntO6jp7jmri7wQY/f6i7G/xMC+J7J5QSPsY6hfELuMrq3LLxFjtOfzeTd9//Dhw4cPf7k5ox4HQSAIk8JL1w2FAOn//6eHVB2F3pu7mn4PTc+YXMYZll1teyXhRvfFFeFgXeX6D3goE8ht3OcDbfJUuztu9ChMAsQc4P09HvkLEtwR48BtHn3LQH3OcS1+veR10uuRPgY/Cw3FjS6RTmQ0GaWPq98aDcIVn5VN446mvskx2YozeozSvwRB0gtY3tCOfOocrlJZbanDcuuseuTTUWaYX6yi9GAbKV0Q+WO2nUvGBLUqx4g66Ue+M72lXkU6LGcz42bzjSad6e0KkEqVS5vluA5Gk73paVGLAiBoA8Hyhn7k7c5fsq5LvAESli+p4iaZtSNvIRIESemwnHiLergg8vbropatcsHB8kWy0448pPdHJaXDchxA5NloQSjvjU/mQpcFKcuTJWxs2pGnfXmHYKkCz7Tf0ahf5aq9PK1iLfoYXBFw6qjy7ypnqxN5SB+beZaQznaBvq7yZJgUbW+SKaVkuxHOLvaf3rfC9mGVr7OMUYLcSAiJIP3kUaUNady3r4RE6JHcCOqdQN9K3yKfrK7l341H7IVGFUR+XeU4QRu2gsLHJqZF/lABkAl9gqDwcBhVvkW+gX+qDXXChUYVtG+hq39sLiOJCEffOrZvOOHyr/rR6W0707Fup2FIo8st/8DBCFg+s08/JpabWN6QsBzNKVb5rrDf5LdpJCxPhrv2DUn/UcvRo3R7maPlGvyq5YfydphYGCfc6Be4hG6xrxML4F+1/NCWBrRv42MXSUpho8doOZOlIfJylpcn3mef38WoQuhRILmbWIQs5xzz6nWJ0/SKWVU8bimvkseJRcp0/3jExev3a6pEXd/Dv+1bELP9ozA/ZuJsPedpJhs1RlPtOLGc38Rxnr0u8SN9mnzMfqr4YnRhmDpMLBjfz096XpVXYoy+vrJRhuBwJznJjGof0TlGSH88fIzZqDPccA7r+Hr2qFZq0Nek++nVzK74TwCK0WacWJyzgE6sbdnHXN67pFfrX830ir7p/919oxMtf5Z3zk/DVeO8sP0+6fXPJt2/zQUg8pCeMLGeQsm5zPWtBbxL+mfVP4026GX6UeXkUY1Ljo9pwTft2N8uKXKIfD/LsDmZXAXOfjf8lvR2IMb83vteNPKPyEs/VWm5ztlv1uduf0MT//bRyIPIC99v5fhoNOMX6vsm/XUsdaWeUYwSJH/z7dnkLYXthVUft1Wf18hH1Y7eyVkO6SDmWNlq3nFrLy0QRosgaTk6WOB3y/6vuyvGARCEgYZB02jsck3//1MvqBTDZHRQbqGB6dLr0YVCHdT9nN+h/osXLV5oR+oP7tf7DTv1jmAIyTPTrefBKurwnsZjQKaTvJkWzwNQqt7NRMAwl8SnBnk+gk8i46hs4meH1sIP5a9Emk8/QC+JXyAE/1kLwYfnhfB5RPJcGGDoBKaSyWtqEFWfCGDNe+9nfQPsyffxDinX8gAAAABJRU5ErkJggg==');
+      :root {
+        --bg-image: url("data:image/png;base64,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");
+      }
+
+      * {
+        font-size: 1.1em;
+        font-weight: 400;
+        list-style-type: none;
+        line-height: 1.3em;
+      }
+
+      @font-face {
+        font-family: "FiraCode-Light";
+        font-display: swap;
+        src: url("assets/fira-code/firacode-light-webfont.woff2")
+          format("woff2");
+      }
+
+      @keyframes moveBackground {
+        from {
+          background-position-x: 0px;
+          background-position-y: 0px;
         }
-
-        * {
-            font-size: 1.1em;
-            font-weight: 400;
-            list-style-type: none;
-            line-height: 1.3em;
+        to {
+          background-position-x: -250px;
+          background-position-y: 500px;
         }
+      }
 
-        @font-face {
-            font-family: "FiraCode-Light";
-            font-display: swap;
-            src: url("assets/fira-code/firacode-light-webfont.woff2") format('woff2');
-        }
+      h1 {
+        font-size: 1.62rem;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+      }
 
-        h1 {
-            font-size: 1.62rem;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-        }
+      p {
+        font-family: "FiraCode-Light", Courier, Georgia, Helvetica, monospace;
+        color: #453000;
+      }
 
-        p {
-            font-family: 'FiraCode-Light', Courier, Georgia, Helvetica, monospace;
-            color: #453000;
-        }
+      html,
+      body {
+        margin: 0;
+      }
 
-        html,
-        body {
-            margin: 0;
-        }
+      body {
+        --bg-x: 0px;
+        --bg-y: 0px;
+        background: #f6eee4 var(--bg-image) fixed;
 
-        body {
-            --bg-x: 0px;
-            --bg-y: 0px;
-            background: #f6eee4 var(--bg-image) fixed;
+        background-position-x: 0px;
+        background-position-y: 0px;
+        animation: moveBackground 50s linear infinite;
+      }
 
-            background-position-x: 0px;
-            background-position-y: 0px;
-        }
+      .shadow-container {
+        position: fixed;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
 
+      #container {
+        display: grid;
+        grid-template-columns: auto minmax(5rem, 50rem) auto;
+        grid-template-rows: 3rem auto;
+        justify-items: stretch;
+      }
 
-        .shadow-container {
-            position: fixed;
-            z-index: -1;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
-
-        #container {
-            display: grid;
-            grid-template-columns: auto minmax(5rem, 50rem) auto;
-            grid-template-rows: 3rem auto;
-            justify-items: stretch;
-        }
-
-        .content {
-            grid-row: 2;
-            grid-column: 2;
-            padding: 0.5rem;
-        }
+      .content {
+        grid-row: 2;
+        grid-column: 2;
+        padding: 0.5rem;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="shadow-container"></div>
     <div id="container">
-        <div class="content">
-            <h1>hsnilsson AB</h1>
+      <div class="content">
+        <h1>hsnilsson AB</h1>
 
-            <p>Hi! 👋</p> <!-- Waving hand emoji, how original -->
-            <p>
-                I'm Henrik Nilsson, a contracting frontend engineer, currently coding
-                TypeScript React at volvocars.com<br />
-            </p>
-            <p>
-                This page is just a stupid flyer, but if you need some real work done
-                in <em>React</em> with <em>TypeScript</em>, <em>JavaScript</em>,
-                <em>HTML</em> and <em>CSS</em>, then see my
-                <a href="assets/CV Henrik S Nilsson.pdf">pdf formatted CV</a> or
-                <a href="https://www.linkedin.com/in/henrik-schulze-nilsson/">Linkedin</a>
-                and don't hesitate to contact me.
-            </p>
+        <p>Hi! 👋</p>
+        <!-- Waving hand emoji, how original -->
+        <p>
+          I'm Henrik Nilsson, a contracting frontend engineer, currently coding
+          TypeScript React at volvocars.com<br />
+        </p>
+        <p>
+          This page is just a stupid flyer, but if you need some real work done
+          in <em>React</em> with <em>TypeScript</em>, <em>JavaScript</em>,
+          <em>HTML</em> and <em>CSS</em>, then see my
+          <a href="assets/CV Henrik S Nilsson.pdf">pdf formatted CV</a> or
+          <a href="https://www.linkedin.com/in/henrik-schulze-nilsson/"
+            >Linkedin</a
+          >
+          and don't hesitate to contact me.
+        </p>
 
-            <p><a class="hsmail"></a></p>
-            <p><a class="hstel"></a></p>
-        </div>
+        <p><a class="hsmail"></a></p>
+        <p><a class="hstel"></a></p>
+      </div>
     </div>
     <script type="text/javascript">
+      const query = document.querySelector.bind(document);
 
-        const query = document.querySelector.bind(document);
-
+      (function initEmailAndPhone() {
         // Custom, funny and naive mail obfusation
         const hsmail = query(".hsmail");
-        hsmail.innerHTML = `&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;`
-            + `&#110;&#105;&#108;&#115;&#115;&#111;&#110;&#46;&#99;&#111;&#109;`
+        hsmail.innerHTML =
+          `&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;` +
+          `&#110;&#105;&#108;&#115;&#115;&#111;&#110;&#46;&#99;&#111;&#109;`;
         hsmail.setAttribute("href", "mai" + "lto:" + hsmail.innerHTML);
 
         const telBy2 = 23366821750.5;
         const hstel = query(".hstel");
         hstel.innerHTML = "+" + telBy2 * 2;
         hstel.setAttribute("href", "tel:" + hstel.innerHTML);
+      })();
 
+      (function orientationBasedShadows() {
         // Shadows, I always thought they should depend on the device orientation!
         // Caveat: Limited to https (and orientation aware devices)
         let updating = false;
-        const body = query('body');
-        const shadowContainer = query('.shadow-container');
-        const container = query('#container');
-        const hsnRetroStyle = [...document.styleSheets].find((sheet) => sheet.ownerNode.id === "hsn-retro-style");
+        const body = query("body");
+        const shadowContainer = query(".shadow-container");
+        const container = query("#container");
+        const hsnRetroStyle = getStyleSheetById("hsn-retro-style");
 
-        function getCSSRulesBySlectorText(rules) {
-            // Find and return rules in the order of selectorText
-            return rules.map(selectorText => [...hsnRetroStyle.cssRules].find(rule => rule.selectorText === selectorText));
-        }
-
-        const [shadowContainerStyleRule, containerStyleRule, bgPosStyleRule] = getCSSRulesBySlectorText([".shadow-container", "#container", "body"])
+        const [
+          shadowContainerStyleRule,
+          containerStyleRule,
+          bgPosStyleRule,
+        ] = getCSSRulesBySlectorText(hsnRetroStyle, [
+          ".shadow-container",
+          "#container",
+          "body",
+        ]);
 
         function handleOrientation(event) {
-            updating = false;
+          updating = false;
 
-            if (!event.beta) return;
+          if (!event.beta) return;
 
-            let pitch = event.beta;  // Pitch, in degree in the range [-180,180]
-            let roll = event.gamma; // Roll, in degree in the range [-90,90]
+          const orientation = constrainOrientation(event.beta, event.gamma);
 
-            // Constrain pitch and roll
-            const maxPitch = 60, minPitch = -60, maxRoll = 60, minRoll = -60;
-            if (pitch > maxPitch) { pitch = maxPitch };
-            if (pitch < minPitch) { pitch = minPitch };
-            if (roll > maxRoll) { roll = maxRoll };
-            if (roll < minRoll) { roll = minRoll };
+          // Create text-shadow and box-shadow
+          const { hOffset, vOffset } = offsetsFromOrientation(orientation);
+          const opacity = opacityFromOrientation(orientation);
 
-            // Create text-shadow and box-shadow
-            const hOffset = Math.trunc((roll * 0.5)),
-                vOffset = Math.trunc((pitch * 0.5)),
-                distance = Math.sqrt(pitch ** 2 + roll ** 2),
-                opacity = 0.15 * (1 - distance / 90); // Enhancement opportunity
+          // Parallax effect for the background-image
+          const { bgPosX, bgPosY } = backgroundTiltByOrientation(orientation);
 
-            const textShadow = `${hOffset}px ${vOffset}px 2px rgba(0,0,0,${opacity})`
-            const boxShadow = `inset ${hOffset}px ${vOffset}px 10px rgba(0,0,0,0.05)`;
+          // Update DOM
+          containerStyleRule.style.setProperty(
+            "text-shadow",
+            `${hOffset}px ${vOffset}px 2px rgba(0,0,0,${opacity})`
+          );
+          shadowContainerStyleRule.style.setProperty(
+            "box-shadow",
+            `inset ${hOffset}px ${vOffset}px 10px rgba(0,0,0,0.05)`
+          );
+          bgPosStyleRule.style.setProperty(
+            "background-position",
+            `${bgPosX}px ${bgPosY}px`
+          );
+        }
 
-            // Parallax effect for the background-image
-            const bgPosX = `${Math.round(roll * -0.7)}px`
-            const bgPosY = `${Math.round(pitch * -0.7)}px`;
+        window.addEventListener(
+          "deviceorientation",
+          onDeviceorientation,
+          false
+        );
 
-            // Update DOM
-            containerStyleRule.style.setProperty('text-shadow', textShadow);
-            shadowContainerStyleRule.style.setProperty('box-shadow', boxShadow);
-            bgPosStyleRule.style.setProperty('background-position', `${bgPosX} ${bgPosY}`);
+        function backgroundTiltByOrientation({ pitch, roll }) {
+          const bgPosX = Math.round(roll * -0.7);
+          const bgPosY = Math.round(pitch * -0.7);
+          return { bgPosX, bgPosY };
+        }
 
+        function offsetsFromOrientation({ pitch, roll }) {
+          const hOffset = Math.trunc(roll * 0.5);
+          const vOffset = Math.trunc(pitch * 0.5);
+          return { hOffset, vOffset };
+        }
+
+        function opacityFromOrientation({ pitch, roll }) {
+          const distance = Math.sqrt(pitch ** 2 + roll ** 2);
+          const opacity = 0.15 * (1 - distance / 90); // Enhancement opportunity
+          return opacity;
         }
 
         function onDeviceorientation(event) {
-            if (!updating) {
-                requestAnimationFrame(() => handleOrientation(event));
-            }
-            updating = true;
+          if (!updating) {
+            requestAnimationFrame(() => handleOrientation(event));
+          }
+          updating = true;
         }
 
-        window.addEventListener('deviceorientation', onDeviceorientation, false);
-    </script>
-</body>
+        function constrainOrientation(
+          pitch, // pitch max range [-180,180] degrees
+          roll, // roll max range [-90,90] degrees
+          maxPitch = 60,
+          minPitch = -60,
+          maxRoll = 60,
+          minRoll = -60
+        ) {
+          if (pitch > maxPitch) pitch = maxPitch;
+          if (pitch < minPitch) pitch = minPitch;
+          if (roll > maxRoll) roll = maxRoll;
+          if (roll < minRoll) roll = minRoll;
 
+          return { pitch, roll };
+        }
+      })();
+
+      function getStyleSheetById(styleSheetId) {
+        return [...document.styleSheets].find(
+          (sheet) => sheet.ownerNode.id === styleSheetId
+        );
+      }
+
+      function getCSSRulesBySlectorText(styleSheet, rules) {
+        // Find and return rules in the order of selectorText
+        return rules.map((selectorText) =>
+          [...styleSheet.cssRules].find(
+            (rule) => rule.selectorText === selectorText
+          )
+        );
+      }
+    </script>
+  </body>
 </html>

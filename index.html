@@ -32,6 +32,17 @@
           format("woff2");
       }
 
+      @keyframes moveBackground {
+        from {
+          background-position-x: 0px;
+          background-position-y: 0px;
+        }
+        to {
+          background-position-x: -250px;
+          background-position-y: 500px;
+        }
+      }
+
       h1 {
         font-size: 1.62rem;
         font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -54,6 +65,7 @@
 
         background-position-x: 0px;
         background-position-y: 0px;
+        animation: moveBackground 50s linear infinite;
       }
 
       .shadow-container {

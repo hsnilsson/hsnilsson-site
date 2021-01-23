@@ -59,30 +59,12 @@
       }
 
       @media (prefers-color-scheme: dark) {
-        /* html { */
-        /* filter: invert(0.98); */
-        html {
-          -webkit-filter: invert(0.98);
-          -moz-filter: invert(0.98);
-          -o-filter: invert(0.98);
-          -ms-filter: invert(0.98);
+        #container {
+          filter: invert(0.98);
         }
-        img {
-          -webkit-filter: invert(0.98);
-          -moz-filter: invert(0.98);
-          -o-filter: invert(0.98);
-          -ms-filter: invert(0.98);
+        body {
+          background-blend-mode: exclusion;
         }
-        video {
-          -webkit-filter: invert(0.98);
-          -moz-filter: invert(0.98);
-          -o-filter: invert(0.98);
-          -ms-filter: invert(0.98);
-        }
-        html {
-          background-color: transparent;
-        }
-        /* } */
       }
 
       body {

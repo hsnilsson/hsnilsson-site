@@ -65,6 +65,9 @@
         body {
           background-blend-mode: exclusion;
         }
+        .no-darkmode {
+          filter: invert(1);
+        }
       }
 
       body {
@@ -107,7 +110,7 @@
       <div class="content">
         <h1>hsnilsson AB</h1>
 
-        <p>Hi! 👋</p>
+        <p>Hi! <span class="no-darkmode">👋</span></p>
         <!-- Waving hand emoji, how original -->
         <p>
           I'm Henrik Nilsson, a contracting frontend engineer, currently coding

@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/henchies/hsnilsson-site#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.13"
+    "browser-sync": "^2.26.14"
   }
 }

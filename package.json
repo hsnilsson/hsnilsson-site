@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/henchies/hsnilsson-site.git"
+    "url": "git+https://github.com/hsnilsson/hsnilsson-site.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/henchies/hsnilsson-site/issues"
+    "url": "https://github.com/hsnilsson/hsnilsson-site/issues"
   },
-  "homepage": "https://github.com/henchies/hsnilsson-site#readme",
+  "homepage": "https://github.com/hsnilsson/hsnilsson-site#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14"
   }

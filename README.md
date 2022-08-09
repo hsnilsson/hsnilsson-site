@@ -3,6 +3,9 @@
 # hsnilsson-site
 A website for hsnilsson AB
 
-Basically just a flyer.
+Basically just a flyer (with an insane amount of small tweaks for the purpose of procastinating other stuff)
+
+![image](https://user-images.githubusercontent.com/1812046/183674860-6cf6433c-ab4e-43a0-999b-10e529586adc.png)
+
 
 Hosted @ [hsnilsson.com](https://hsnilsson.com)

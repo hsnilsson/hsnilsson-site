@@ -156,9 +156,6 @@
         // Shadows, I always thought they should depend on the device orientation!
         // Caveat: Limited to https (and orientation aware devices)
         let updating = false;
-        const body = query("body");
-        const shadowContainer = query(".shadow-container");
-        const container = query("#container");
         const hsnRetroStyle = getStyleSheetById("hsn-retro-style");
 
         const [shadowContainerStyleRule, containerStyleRule, bgPosStyleRule] =
@@ -190,10 +187,6 @@
           shadowContainerStyleRule.style.setProperty(
             "box-shadow",
             `inset ${hOffset}px ${vOffset}px 10px rgba(0,0,0,0.05)`
-          );
-          bgPosStyleRule.style.setProperty(
-            "background-position",
-            `${bgPosX}px ${bgPosY}px`
           );
         }
 

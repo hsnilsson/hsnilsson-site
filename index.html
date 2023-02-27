@@ -55,7 +55,6 @@
         #container {
           filter: invert(0.98);
         }
-        body,
         .background {
           background-blend-mode: exclusion;
         }
@@ -63,9 +62,10 @@
           filter: invert(1);
         }
       }
-      
+
       .background {
         position: fixed;
+        z-index: -1;
         overflow: hidden;
         top: -500px;
         left: -500px;
@@ -94,7 +94,6 @@
       }
 
       #container {
-        filter: invert(0); 
         display: grid;
         grid-template-columns: auto minmax(5rem, 50rem) auto;
         grid-template-rows: 3rem auto;

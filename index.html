@@ -115,8 +115,7 @@
       <div class="content">
         <h1>hsnilsson AB</h1>
 
-        <p>Hi! <span class="no-darkmode">👋</span></p>
-        <!-- Waving hand emoji, how original -->
+        <p>Hi! <span class="no-darkmode">🌠</span></p>
         <p>
           I'm Henrik Nilsson, a contracting frontend engineer, currently coding
           TypeScript React at volvocars.com<br />
@@ -133,23 +132,23 @@
         </p>
 
         <p><a class="hsmail"></a></p>
-        <p><a class="hstel"></a></p>
+        <p>
+          <a class="hstel"></a>
+        </p>
       </div>
     </div>
     <script type="text/javascript">
       const query = document.querySelector.bind(document);
 
       (function initEmailAndPhone() {
-        // Custom, funny and naive mail obfusation
         const hsmail = query(".hsmail");
         hsmail.innerHTML =
           `&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;` +
           `&#110;&#105;&#108;&#115;&#115;&#111;&#110;&#46;&#99;&#111;&#109;`;
         hsmail.setAttribute("href", "mai" + "lto:" + hsmail.innerHTML);
 
-        const telBy2 = 23366821750.5;
         const hstel = query(".hstel");
-        hstel.innerHTML = "+" + telBy2 * 2;
+        hstel.innerHTML = "+467336four3501";
         hstel.setAttribute("href", "tel:" + hstel.innerHTML);
       })();
 

@@ -36,17 +36,6 @@
           format("woff2");
       }
 
-      @keyframes moveBackground {
-        from {
-          background-position-x: 0px;
-          background-position-y: 0px;
-        }
-        to {
-          background-position-x: -250px;
-          background-position-y: 500px;
-        }
-      }
-
       h1 {
         font-size: 1.62rem;
         font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -66,7 +55,8 @@
         #container {
           filter: invert(0.98);
         }
-        body {
+        body,
+        .background {
           background-blend-mode: exclusion;
         }
         .no-darkmode {
@@ -77,11 +67,26 @@
       body {
         --bg-x: 0px;
         --bg-y: 0px;
-        background: #f6eee4 var(--bg-image) fixed;
+      }
 
-        background-position-x: 0px;
-        background-position-y: 0px;
+      .background {
+        position: fixed;
+        overflow: hidden;
+        top: -500px;
+        left: -500px;
+        right: -500px;
+        bottom: -500px;
+        background: #f6eee4 var(--bg-image) fixed;
         animation: moveBackground 50s linear infinite;
+      }
+
+      @keyframes moveBackground {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(-250px, 500px, 0);
+        }
       }
 
       .shadow-container {
@@ -109,6 +114,7 @@
   </head>
 
   <body>
+    <div class="background"></div>
     <div class="shadow-container"></div>
     <div id="container">
       <div class="content">

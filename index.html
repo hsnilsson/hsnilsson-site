@@ -63,12 +63,7 @@
           filter: invert(1);
         }
       }
-
-      body {
-        --bg-x: 0px;
-        --bg-y: 0px;
-      }
-
+      
       .background {
         position: fixed;
         overflow: hidden;
@@ -99,6 +94,7 @@
       }
 
       #container {
+        filter: invert(0); 
         display: grid;
         grid-template-columns: auto minmax(5rem, 50rem) auto;
         grid-template-rows: 3rem auto;

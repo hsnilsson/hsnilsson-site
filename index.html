@@ -65,7 +65,6 @@
 
       .background {
         position: fixed;
-        z-index: -1;
         overflow: hidden;
         top: -500px;
         left: -500px;
@@ -73,6 +72,7 @@
         bottom: -500px;
         background: #f6eee4 var(--bg-image) fixed;
         animation: moveBackground 50s linear infinite;
+        z-index: -1;
       }
 
       @keyframes moveBackground {
@@ -138,9 +138,8 @@
       </div>
     </div>
     <script type="text/javascript">
-      const query = document.querySelector.bind(document);
-
       (function initEmailAndPhone() {
+        const query = document.querySelector.bind(document);
         const hsmail = query(".hsmail");
         hsmail.innerHTML =
           `&#104;&#101;&#108;&#108;&#111;&#64;&#104;&#115;` +
@@ -158,11 +157,10 @@
         let updating = false;
         const hsnRetroStyle = getStyleSheetById("hsn-retro-style");
 
-        const [shadowContainerStyleRule, containerStyleRule, bgPosStyleRule] =
+        const [shadowContainerStyleRule, containerStyleRule] =
           getCSSRulesBySlectorText(hsnRetroStyle, [
             ".shadow-container",
             "#container",
-            "body",
           ]);
 
         function handleOrientation(event) {
@@ -236,22 +234,22 @@
 
           return { pitch, roll };
         }
+
+        function getStyleSheetById(styleSheetId) {
+          return [...document.styleSheets].find(
+            (sheet) => sheet.ownerNode.id === styleSheetId
+          );
+        }
+
+        function getCSSRulesBySlectorText(styleSheet, rules) {
+          // Find and return rules in the order of selectorText
+          return rules.map((selectorText) =>
+            [...styleSheet.cssRules].find(
+              (rule) => rule.selectorText === selectorText
+            )
+          );
+        }
       })();
-
-      function getStyleSheetById(styleSheetId) {
-        return [...document.styleSheets].find(
-          (sheet) => sheet.ownerNode.id === styleSheetId
-        );
-      }
-
-      function getCSSRulesBySlectorText(styleSheet, rules) {
-        // Find and return rules in the order of selectorText
-        return rules.map((selectorText) =>
-          [...styleSheet.cssRules].find(
-            (rule) => rule.selectorText === selectorText
-          )
-        );
-      }
     </script>
   </body>
 </html>

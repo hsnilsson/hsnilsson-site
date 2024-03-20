@@ -6,7 +6,10 @@
   "scripts": {
     "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --port 1212  --https 'true'",
     "https": "npx local-web-server --https",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/hsnilsson/hsnilsson-site#readme",
   "devDependencies": {
+    "vite": "^5.1.6",
     "browser-sync": "^2.26.14"
   }
 }

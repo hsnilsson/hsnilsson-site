@@ -4,7 +4,6 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/3808f4c6-f0df-47f4-9b0a-b0baea3e3cc1/deploy-status)](https://app.netlify.com/sites/hsnilsson/deploys)",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --port 1212  --https 'true'",
     "https": "npx local-web-server --https",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
@@ -23,7 +22,6 @@
   },
   "homepage": "https://github.com/hsnilsson/hsnilsson-site#readme",
   "devDependencies": {
-    "vite": "^5.1.6",
-    "browser-sync": "^2.26.14"
+    "vite": "^5.1.6"
   }
 }

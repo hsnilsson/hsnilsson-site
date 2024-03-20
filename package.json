@@ -23,5 +23,6 @@
   "homepage": "https://github.com/hsnilsson/hsnilsson-site#readme",
   "devDependencies": {
     "vite": "^5.1.6"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }

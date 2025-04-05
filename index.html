@@ -200,6 +200,21 @@
           "#container",
         ]);
 
+      function getStyleSheetById(styleSheetId) {
+        return [...document.styleSheets].find(
+          (sheet) => sheet.ownerNode.id === styleSheetId
+        );
+      }
+
+      function getCSSRulesBySlectorText(styleSheet, rules) {
+        // Find and return rules in the order of selectorText
+        return rules.map((selectorText) =>
+          [...styleSheet.cssRules].find(
+            (rule) => rule.selectorText === selectorText
+          )
+        );
+      }
+
       function handleOrientation(event) {
         updating = false;
 
@@ -225,37 +240,6 @@
         );
       }
 
-      window.addEventListener(
-        "deviceorientation",
-        onDeviceorientation,
-        false
-      );
-
-      function backgroundTiltByOrientation({ pitch, roll }) {
-        const bgPosX = Math.round(roll * -0.7);
-        const bgPosY = Math.round(pitch * -0.7);
-        return { bgPosX, bgPosY };
-      }
-
-      function offsetsFromOrientation({ pitch, roll }) {
-        const hOffset = Math.trunc(roll * 0.5);
-        const vOffset = Math.trunc(pitch * 0.5);
-        return { hOffset, vOffset };
-      }
-
-      function opacityFromOrientation({ pitch, roll }) {
-        const distance = Math.sqrt(pitch ** 2 + roll ** 2);
-        const opacity = 0.15 * (1 - distance / 90); // Enhancement opportunity
-        return opacity;
-      }
-
-      function onDeviceorientation(event) {
-        if (!updating) {
-          requestAnimationFrame(() => handleOrientation(event));
-        }
-        updating = true;
-      }
-
       function constrainOrientation(
         pitch, // pitch max range [-180,180] degrees
         roll, // roll max range [-90,90] degrees
@@ -272,19 +256,34 @@
         return { pitch, roll };
       }
 
-      function getStyleSheetById(styleSheetId) {
-        return [...document.styleSheets].find(
-          (sheet) => sheet.ownerNode.id === styleSheetId
-        );
+      function offsetsFromOrientation({ pitch, roll }) {
+        const hOffset = Math.trunc(roll * 0.5);
+        const vOffset = Math.trunc(pitch * 0.5);
+        return { hOffset, vOffset };
       }
 
-      function getCSSRulesBySlectorText(styleSheet, rules) {
-        // Find and return rules in the order of selectorText
-        return rules.map((selectorText) =>
-          [...styleSheet.cssRules].find(
-            (rule) => rule.selectorText === selectorText
-          )
-        );
+      function opacityFromOrientation({ pitch, roll }) {
+        const distance = Math.sqrt(pitch ** 2 + roll ** 2);
+        return 0.15 * (1 - distance / 90);
+      };
+
+      function backgroundTiltByOrientation({ pitch, roll }) {
+        const bgPosX = Math.round(roll * -0.7);
+        const bgPosY = Math.round(pitch * -0.7);
+        return { bgPosX, bgPosY };
+      }
+
+      window.addEventListener(
+        "deviceorientation",
+        onDeviceorientation,
+        false
+      );
+
+      function onDeviceorientation(event) {
+        if (!updating) {
+          requestAnimationFrame(() => handleOrientation(event));
+        }
+        updating = true;
       }
     })();
   </script>

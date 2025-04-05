@@ -1,0 +1,10 @@
+# robots.txt for hsnilsson.com
+User-agent: *
+Allow: /
+Allow: /assets/CV Henrik S Nilsson.pdf
+
+# Prevent crawling of unused assets
+Disallow: /assets/unused/
+
+# Website root
+Sitemap: https://hsnilsson.com/sitemap.xml

@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "subset-font": "node subset-font.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,9 @@
   "devDependencies": {
     "vite": "^5.1.6"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "fontkit": "^2.0.4",
+    "jsdom": "^26.0.0"
+  }
 }

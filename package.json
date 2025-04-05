@@ -4,12 +4,12 @@
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/3808f4c6-f0df-47f4-9b0a-b0baea3e3cc1/deploy-status)](https://app.netlify.com/sites/hsnilsson/deploys)",
   "main": "index.js",
   "scripts": {
-    "https": "npx local-web-server --https",
+    "https": "bunx local-web-server --https",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "subset-font": "node subset-font.js"
+    "dev": "bunx vite",
+    "build": "bunx vite build",
+    "preview": "bunx vite preview",
+    "subset-font": "bun run subset-font.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   "devDependencies": {
     "vite": "^5.1.6"
   },
-  "packageManager": "yarn@4.1.1",
   "dependencies": {
     "jsdom": "^26.0.0",
     "subset-font": "^2.4.0"

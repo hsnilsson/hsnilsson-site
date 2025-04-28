@@ -1,9 +1,19 @@
 # Netlify drawback: https://community.netlify.com/t/common-issue-can-i-deploy-multiple-repositories-in-a-single-site/179
+
 # To avoid modifying other repos that are routed to from this site, currently ALL their files must be proxied:
-# (splat (*) works only as long as a subsite only have relative paths, e.g.: <img src=something-not-starting-withslash.png>)
+
+# (splat (\*) works only as long as a subsite only have relative paths, e.g.: <img src=something-not-starting-withslash.png>)
 
 # Redirects for /MPFExtractor
-/mpfextractor/* https://mpfextractor.netlify.com/:splat 200!
+
+/mpfextractor/\* https://mpfextractor.netlify.com/:splat 200!
 
 # Redirects for /room
-/room/* https://student-room.netlify.com/:splat 200!
+
+/room/\* https://student-room.netlify.com/:splat 200!
+
+# Redirects for index and allfix
+
+/\* /index.html 200
+/allfix /allfix/index.html 200
+/allfix/ /allfix/index.html 200

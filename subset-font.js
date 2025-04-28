@@ -1,18 +1,20 @@
+/**
+ * Font Subsetting Script
+ * ---------------------
+ * Usage:
+ *   node subset-font.js <inputFont> <outputFont> [...htmlFiles]
+ */
+
 const fs = require("fs");
 const path = require("path");
 const subsetFont = require("subset-font");
 const { JSDOM } = require("jsdom");
 
-const htmlFilePath = path.join(__dirname, "index.html");
-const fontFilePath = path.join(
-  __dirname,
-  "assets/fira-code/firacode-light-webfont.woff2"
-);
-const outputFontPath = path.join(
-  __dirname,
-  "assets/fira-code/firacode-light-webfont-subset.woff2"
-);
-
+/**
+ * Extracts all unique characters from an HTML file's text and script content
+ * @param {string} htmlFilePath - Path to HTML file
+ * @returns {string} String containing all unique characters
+ */
 function extractUsedCharacters(htmlFilePath) {
   const htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
   const dom = new JSDOM(htmlContent);
@@ -26,6 +28,12 @@ function extractUsedCharacters(htmlFilePath) {
   return Array.from(new Set([...textContent, ...scriptContent])).join("");
 }
 
+/**
+ * Creates a subset of a font file containing only specified characters
+ * @param {string} fontFilePath - Path to source font file
+ * @param {string} outputFontPath - Path where subset font will be saved
+ * @param {string} characters - String of characters to include in subset
+ */
 async function createFontSubset(fontFilePath, outputFontPath, characters) {
   try {
     const fontBuffer = fs.readFileSync(fontFilePath);
@@ -41,6 +49,11 @@ async function createFontSubset(fontFilePath, outputFontPath, characters) {
   }
 }
 
+/**
+ * Updates HTML file by replacing existing base64 font with new subsetted font
+ * @param {string} htmlFilePath - Path to HTML file to update
+ * @param {string} fontFilePath - Path to subsetted font file
+ */
 function replaceBase64FontInHTML(htmlFilePath, fontFilePath) {
   const htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
   const fontData = fs.readFileSync(fontFilePath);
@@ -54,21 +67,86 @@ function replaceBase64FontInHTML(htmlFilePath, fontFilePath) {
   fs.writeFileSync(htmlFilePath, updatedHTML, "utf-8");
 }
 
+/**
+ * Collects HTML files from input path(s)
+ * @param {string|string[]} input - Directory path or array of file paths
+ * @returns {string[]} Array of HTML file paths
+ */
+function getHtmlFiles(input) {
+  if (Array.isArray(input)) {
+    return input.filter((file) => file.endsWith(".html"));
+  }
+
+  const files = [];
+  const readDir = (dir) => {
+    fs.readdirSync(dir).forEach((file) => {
+      const fullPath = path.join(dir, file);
+      if (fs.statSync(fullPath).isDirectory()) {
+        readDir(fullPath);
+      } else if (file.endsWith(".html")) {
+        files.push(fullPath);
+      }
+    });
+  };
+
+  readDir(input);
+  return files;
+}
+
+/**
+ * Main process: handles input parsing and processes all HTML files
+ * Creates font subsets and updates HTML files with optimized fonts
+ * @returns {Promise<void>}
+ */
 async function main() {
   try {
-    console.log("Extracting used characters...");
-    const usedCharacters = extractUsedCharacters(htmlFilePath);
-    console.log(`Characters found: ${usedCharacters}`);
+    const args = process.argv.slice(2);
+    if (args.length < 3) {
+      console.error(
+        "Usage: node subset-font.js <inputFont> <outputFont> [...htmlFiles]"
+      );
+      process.exit(1);
+    }
 
-    console.log("Subsetting font...");
-    await createFontSubset(fontFilePath, outputFontPath, usedCharacters);
+    const [inputFont, outputFont, ...htmlPaths] = args;
 
-    console.log("Replacing Base64 font in HTML...");
-    replaceBase64FontInHTML(htmlFilePath, outputFontPath);
+    if (!fs.existsSync(inputFont)) {
+      throw new Error(`Input font not found: ${inputFont}`);
+    }
 
-    console.log("Font subsetting and HTML update completed.");
+    // Ensure output directory exists
+    fs.mkdirSync(path.dirname(outputFont), { recursive: true });
+
+    const allHtmlFiles = htmlPaths.flatMap((input) => {
+      if (fs.statSync(input).isDirectory()) {
+        return getHtmlFiles(input);
+      }
+      return input.endsWith(".html") ? [input] : [];
+    });
+
+    console.log(`Processing ${allHtmlFiles.length} HTML files...`);
+
+    // Collect all unique characters from all HTML files
+    const allCharacters = new Set();
+    for (const file of allHtmlFiles) {
+      const chars = extractUsedCharacters(file);
+      [...chars].forEach((char) => allCharacters.add(char));
+    }
+
+    // Create single font subset with all characters
+    console.log("Creating font subset...");
+    await createFontSubset(inputFont, outputFont, [...allCharacters].join(""));
+
+    // Update all HTML files with the same subsetted font
+    for (const file of allHtmlFiles) {
+      console.log(`Updating ${file}...`);
+      replaceBase64FontInHTML(file, outputFont);
+    }
+
+    console.log("\nAll files processed successfully.");
   } catch (err) {
     console.error("Error in main process:", err);
+    process.exit(1);
   }
 }
 

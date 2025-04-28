@@ -9,7 +9,7 @@
     "dev": "bunx vite",
     "build": "bunx vite build",
     "preview": "bunx vite preview",
-    "subset-font": "bun run subset-font.js"
+    "subset-font": "bun run subset-font.js assets/fira-code/firacode-light-webfont.woff2 assets/fira-code/firacode-light-webfont-subset.woff2 ./index.html"
   },
   "repository": {
     "type": "git",

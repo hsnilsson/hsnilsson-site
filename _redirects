@@ -6,11 +6,11 @@
 
 # Redirects for /MPFExtractor
 
-/mpfextractor/\* https://mpfextractor.netlify.com/:splat 200!
+/mpfextractor/\* https://mpfextractor.netlify.app/:splat 200!
 
 # Redirects for /room
 
-/room/\* https://student-room.netlify.com/:splat 200!
+/room/\* https://student-room.netlify.app/:splat 200!
 
 # Redirects for index and allfix
 
